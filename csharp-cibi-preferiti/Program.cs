@@ -1,33 +1,38 @@
-﻿// See https://aka.ms/new-console-template for more information
-string[] cibiPreferiti = { "Pizza", "Pasta", "Nutella", "Sushi", "Gelato", "Bistecca", "Insalata", "Arancia" };
+﻿Console.WriteLine("BENVENUTI NELLA CLASSIFICA DEI MIEI CIBI PREFERITI!");
 
-cibiPreferiti[6] = "Formaggio";
+// Creo l'array di stringhe che formerà la mia classifica
+string[] cibiPreferiti = { "Pizza", "Pasta", "Nutella", "Sushi", "Gelato", "Bistecca", "Insalata" };
 
-Console.WriteLine("-------------------------------------------------------");
+cibiPreferiti[6] = "Formaggio"; // soistituisco il 7° elemento della mia array
 
+Console.WriteLine("-------------------------------------------------------"); // divisione grafica
+
+// Dichiaro il numero di elementi da cui è composta la mia classifica
 Console.WriteLine("La classifica è composta da " +  cibiPreferiti.Length + " cibi, ovvero:");
-
+// Elenco gli elementi da cui è composta la mia classifica con un ciclo for
 for (int i = 0; i < cibiPreferiti.Length; i++)
 {
     var numeroClassifica = i + 1;
     Console.WriteLine(numeroClassifica + "° " +  cibiPreferiti[i]);
 }
 
-Console.WriteLine("-------------------------------------------------------");
+Console.WriteLine("-------------------------------------------------------"); // divisione grafica
 
-Console.WriteLine("Il cibo preferito è " + cibiPreferiti[0]);
-Console.WriteLine("Il cibo peggiore tra i preferiti è " + cibiPreferiti[cibiPreferiti.Length - 1]);
+// Riporto il mio cibo preferito a schermo
+Console.WriteLine("- Il cibo preferito è " + cibiPreferiti[0] + ";");
+// Riporto il mio cibo meno preferito della classifica a schermo
+Console.WriteLine("- Il cibo peggiore tra i preferiti è " + cibiPreferiti[cibiPreferiti.Length - 1] + ";");
+
 
 // BONUS
+var centroClassifica = cibiPreferiti.Length / 2; //trovo l'elemento centrale della mia classifica
 
-var centroClassifica = cibiPreferiti.Length / 2;
-
-if (centroClassifica % 2 == 0)
+if (centroClassifica % 2 == 0) // SE l'elemento centrale della mia classifica è pari 
 {
-    Console.WriteLine("I cibi a centro classifica sono " + cibiPreferiti[centroClassifica--] + " e " + cibiPreferiti[centroClassifica++]);
+    Console.WriteLine("- I cibi a centro classifica sono " + cibiPreferiti[centroClassifica - 1] + " e " + cibiPreferiti[centroClassifica] + ";"); // riporto a schermo i due elementi centrali della mia classifica
 } else
 {
-    Console.WriteLine("Il cibo a centro classifica è " + cibiPreferiti[centroClassifica]);
+    Console.WriteLine("- Il cibo a centro classifica è " + cibiPreferiti[centroClassifica] + ";"); // riporto l'unico elemento al centro della mia classifica
 }
 
 
